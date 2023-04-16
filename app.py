@@ -12,12 +12,12 @@ def get_model_path(model_folder="eve_models" , district="labuduwa"):
     suffix = ".pkl"
 
     if(model_folder=="eve_models"):
-        prefix = "./"+model_folder+"/eve_"
+        prefix = ""+model_folder+"/eve_"
     elif(model_folder=="temp_models"):
-        prefix = "./"+model_folder+"/temp_"
+        prefix = ""+model_folder+"/temp_"
     else:
         print("|||||||  None of the Conditions were Matched  |||||||||")
-        prefix = "./"+model_folder+"eve_"
+        prefix = ""+model_folder+"eve_"
 
     model_path = prefix+ district.capitalize()+suffix
 
