@@ -1,0 +1,11 @@
+Flask
+gunicorn
+Werkzeug
+numpy
+pandas
+datetime
+pandas
+joblib
+
+
+
