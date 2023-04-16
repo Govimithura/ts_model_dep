@@ -6,6 +6,7 @@ pandas
 datetime
 pandas
 joblib
+scikit-learn
 
 
 
