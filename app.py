@@ -15,6 +15,8 @@ def get_model_path(model_folder="eve_models" , district="labuduwa"):
         prefix = "./"+model_folder+"/eve_"
     elif(model_folder=="temperature_models"):
         prefix = "./"+model_folder+"/temp_"
+    elif(model_folder=="rainfall_models"):
+        prefix = "./"+model_folder+"/rf_"
     else:
         print("|||||||  None of the Conditions were Matched  |||||||||")
         prefix = "./"+model_folder+"eve_"
@@ -81,8 +83,9 @@ def forecast_eveporation():
 
     eve_results = get_avg_for_next_week(model_folder="eve_models" , district=p_district)
     temp_result = get_avg_for_next_week(model_folder="temperature_models" , district=p_district)
+    rf_result = get_avg_for_next_week(model_folder="rainfall_models" , district=p_district)
 
-    return {"eveporation" : eve_results , "temperature" : temp_result}
+    return {"eveporation" : eve_results , "temperature" : temp_result , "rainfall" : rf_result}
 
 
 
