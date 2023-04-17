@@ -88,7 +88,7 @@ def forecast_eveporation():
     rf_result = get_avg_for_next_week(model_folder="rainfall_models" , district=p_district)
     hm_result = get_avg_for_next_week(model_folder="humidity_models" , district=p_district)
 
-    return {"eveporation" : eve_results , "temperature" : temp_result , "rainfall" : rf_result , "humadity":hm_result}
+    return {"eveporation" : eve_results , "temperature" : temp_result , "rainfall" : rf_result , "humidity":hm_result}
 
 
 
