@@ -12,12 +12,12 @@ def get_model_path(model_folder="eve_models" , district="labuduwa"):
     suffix = ".pkl"
 
     if(model_folder=="eve_models"):
-        prefix = ""+model_folder+"/eve_"
-    elif(model_folder=="temp_models"):
-        prefix = ""+model_folder+"/temp_"
+        prefix = "./"+model_folder+"/eve_"
+    elif(model_folder=="temperature_models"):
+        prefix = "./"+model_folder+"/temp_"
     else:
         print("|||||||  None of the Conditions were Matched  |||||||||")
-        prefix = ""+model_folder+"eve_"
+        prefix = "./"+model_folder+"eve_"
 
     model_path = prefix+ district.capitalize()+suffix
 
@@ -73,15 +73,16 @@ def check_path():
 
 
 
-@app.route('/forecast-eve', methods=['POST'])
+@app.route('/forecast', methods=['POST'])
 def forecast_eveporation():
     
     p_district = request.form['district']
     print("Obtaining Results for {} District".format(p_district))
 
     eve_results = get_avg_for_next_week(model_folder="eve_models" , district=p_district)
+    temp_result = get_avg_for_next_week(model_folder="temperature_models" , district=p_district)
 
-    return {"eveporation" : eve_results}
+    return {"eveporation" : eve_results , "temperature" : temp_result}
 
 
 
